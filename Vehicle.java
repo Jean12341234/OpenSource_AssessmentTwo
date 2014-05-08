@@ -1,11 +1,21 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package fuelpurchase;
 
+/**
+ *
+ * @author 041209329
+ */
 public class Vehicle {
+
+   
 	private String			manufacturer;
 	private String			model;
-	private int				makeYear;
+	private int			makeYear;
+        private Journey			journey;
 
-	private Journey			journey;
-	
 	@SuppressWarnings("unused")
 	private FuelPurchase	fuelPurchase;
 
@@ -40,11 +50,19 @@ public class Vehicle {
 	 * Prints details for {@link Vehicle}
 	 */
 	public void printDetails() {
-		System.out.println("Manufacturer: " + manufacturer);
-		System.out.println("Model: " + model);
-		System.out.println("Make Year: " + makeYear);
-		System.out.println("Total Kilometers Travelled: " + journey.getKilometers());
-		System.out.println("Total Services: " + journey.getTotalServices());
+		//Jean changes
+                System.out.println("Manufacturer: " + (" Manufactured by ") + manufacturer);
+		System.out.println("Car Model: " + (" Model ") + model);
+		System.out.println("Year of Production: " + (" Year ") + makeYear);
+                System.out.println("The Total Distance Travelled in Kilometers: " + journey.getKilometers() + " Kilometers ");
+		System.out.println("Services Undergone: " + journey.getTotalServices() + " Services was Undergone ");
+                System.out.println("This vehicle achieve a fuel consumption of: " + journey.getFuel() + " Litres per 100km ");
+                // Gerald have made changes on the format of the message
+                
+                
+                System.out.println("The total distance travelled is " + journey.getKilometers() + "kilometers");
+		System.out.println("The vehicle should have undergone " + journey.getTotalServices() + "services.");
+                System.out.println("The average cost of fuel was $" journey.getLiters() + "per liter.");
 	}
 
 	/**
@@ -53,7 +71,8 @@ public class Vehicle {
 	 * @param distance
 	 *            distance of kilometers traveled
 	 */
-	public void addKilometers(double distance) {
+	
+        public void addKilometers(double distance) {
 		journey.addKilometers(distance);
 	}
 
